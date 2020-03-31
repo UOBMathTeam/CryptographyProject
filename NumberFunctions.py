@@ -1,3 +1,32 @@
+import numba
+
+@numba.jit('boolean(int64)', nopython = True)
+def isprime_basic_fast(n):
+    '''
+    Checks whether the argument n is a prime number using a brute force 
+    search for factors between 1 and n. We made it verbose here for 
+    illustration. (I.e. it prints out its results.)
+    '''
+    # If n is even then it is only prime if it is 2
+    if n==1:
+        return False
+    
+    if n % 2 == 0:
+        if n == 2: 
+            return True
+        else:
+            return False
+        
+    # So now we can consider odd numbers only. 
+    j = 3
+    rootN = n**0.5
+    # Now check all numbers 3,5,... up to sqrt(n)
+    while j <= rootN: 
+        if n % j == 0:
+            return False
+        j = j + 2
+    return True 
+
 def isprime_basic(n,verbose=False): 
     '''
     Checks whether the argument n is a prime number using a brute force 
@@ -28,6 +57,16 @@ def isprime_basic(n,verbose=False):
         print("{} is prime.".format(n))
     return True 
 
+@numba.jit('int64(int64,int64)', nopython = True)
+def gcd_fast(a,b):
+    """Returns the greatest common divisor of integers a and b using Euclid's algorithm.
+    The order of a and b does not matter and nor do the signs."""
+    if not(a%1 ==0 and b%1==0):
+        return -1
+    if b==0:
+        return abs(a)                           #Use abs to ensure this is positive
+    else:
+        return gcd_fast(b,a%b)
 
 def gcd(a,b):
     """Returns the greatest common divisor of integers a and b using Euclid's algorithm.
