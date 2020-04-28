@@ -77,9 +77,9 @@ def gcd(a,b):
         return abs(a)                           #Use abs to ensure this is positive
     else:
         return gcd(b,a%b)
-    
-    
-    
+
+
+
 def gcd_ext(a,b):
     """Wish to output (gcd,x,y) such that gcd=ax+by."""
     if not(a%1 ==0 and b%1==0):                         #Reject if trying to use for non-integers
@@ -92,7 +92,19 @@ def gcd_ext(a,b):
         g, x, y = gcd_ext(b%a, a)                       #And if  g=x1*r + y1*a then since r=b-qa
         return (g, y - quot * x, x)                     #We get g = a*(y1-q*x1)+x1*b.
                                                         #So x=y1-q*x1 and y=x1.
-
+        
+@numba.jit(nopython = True)
+def gcd_ext_fast(a,b):
+    """Wish to output (gcd,x,y) such that gcd=ax+by."""
+      
+    if a == 0:                                          #Base case is when a=0.
+        return (abs(b), 0, abs(b)//b)                   #Then gcd =|b| and is 0*a+1*b or 0*a-1*b. Use abs(b)//b
+    else:
+        quot=b//a                                       #The rule is that g=gcd(a,b)=gcd(b%a,a).
+                                                        #Let b=qa+r where r=b%a
+        g, x, y = gcd_ext_fast(b%a, a)                       #And if  g=x1*r + y1*a then since r=b-qa
+        return (g, y - quot * x, x)
+    
 
 def smallest_factor(n):
     """Returns the smallest factor of a positive integer n."""
