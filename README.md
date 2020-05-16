@@ -51,3 +51,19 @@
     <li> Milan Patel </li>
     <li> Will Steynor </li>
 </ol>
+
+## Recommended Viewing
+This is a very large project, so to view it on lower end computers it is recommended to view the corresponding html document of the project
+
+## Running The Entire ipynb file
+Make sure read_times = True
+This will make the project read times instead of generating them from data which was pregenerated.
+In Core 1 the code sometimes asks for the users input just enter "Yes" and the notebook will finnish executing that cell.
+It is worth noting sometimes the tests or a function will fail as the way primes are generated are by probabilistic methods which have a chance of failing.
+
+## What was the code run on?
+The timeit python functions and other timming code were benchmarked on an Intel(R) Core(TM) i5-6600k CPU @ 3.50GHz
+To keep these times coherent through the project the timeit cells have been frozen and read_times = True by default.
+
+## Github Repository
+To see how our work was developed vist https://github.com/UOBMathTeam/CryptographyProject
