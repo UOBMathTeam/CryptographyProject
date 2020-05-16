@@ -43,3 +43,11 @@
 8 8888         8 8888   `8b.   ` 8888     ,88'     `88o.    8 88'  8 8888            8888     ,88'     8 8888      
 8 8888         8 8888     `88.    `8888888P'         `Y888888 '    8 888888888888     `8888888P'       8 8888      
 ~~~~
+
+## The Team
+<ol>
+    <li> Mark Pearson </li>
+    <li> Ronan Geraghty</li>
+    <li> Milan Patel </li>
+    <li> Will Steynor </li>
+</ol>
