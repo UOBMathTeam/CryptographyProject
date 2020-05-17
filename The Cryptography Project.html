@@ -13388,11 +13388,14 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> my_pow(12321, 546547, 2349809)
+<span class="c1"># 1.45 µs ± 34.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)</span>
+
 <span class="o">%</span><span class="k">timeit</span> pow(12321, 546547, 2349809)
+<span class="c1"># 2.39 µs ± 74.8 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
 </pre></div>
 
     </div>
@@ -13409,8 +13412,8 @@ $$
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.4 µs ± 28 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
-2.36 µs ± 46 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<pre>1.45 µs ± 34.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+2.39 µs ± 74.8 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre>
 </div>
 </div>
@@ -16016,7 +16019,7 @@ h &amp;= 15
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Public Key is: N =71676576928516402395821664986515127109405051109877377063161942914685184269928479725731428768312336468816303720486994974509087771209731499718883107452257486745736309068553482602847210184601615822636656374720223441615855321330612314982239459501882575902237619707238638382329360633722793547121332235415958199243 and e=65537
+<pre>Public Key is: N =82564294807861636809304700982985273204242396430601970974478109650378455144381470588648967232811656904079096804348735455409547117738028699205296780346303118907674298867380957788676671651706378994581489437679563469252171171588506190144071296851693494381964700655949038700099353820812975378734457757344242736249 and e=65537
 </pre>
 </div>
 </div>
@@ -16387,6 +16390,7 @@ through the glass, and she tried her best t
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> decrypt_and_join1(my_ctxt, p, q, N, e)
+<span class="c1"># 10.4 s ± 164 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</span>
 </pre></div>
 
     </div>
@@ -19537,6 +19541,7 @@ $$ L = \prod_{primes \space   l \leq B} q^{\lfloor ln \space n \space/\space ln\
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pminus1(551)  # timeit test for a 10 bit N
+<span class="c1"># 668 µs ± 12.9 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)</span>
 </pre></div>
 
     </div>
@@ -19568,6 +19573,7 @@ $$ L = \prod_{primes \space   l \leq B} q^{\lfloor ln \space n \space/\space ln\
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pminus1(542257)  # timeit test for a 20 bit N
+<span class="c1"># 14.1 ms ± 323 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 
     </div>
@@ -19599,6 +19605,7 @@ $$ L = \prod_{primes \space   l \leq B} q^{\lfloor ln \space n \space/\space ln\
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pminus1(818810243)  # timeit test for a 30 bit N
+<span class="c1"># 396 ms ± 6.88 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</span>
 </pre></div>
 
     </div>
@@ -19630,6 +19637,7 @@ $$ L = \prod_{primes \space   l \leq B} q^{\lfloor ln \space n \space/\space ln\
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pminus1(30662248501)  # timeit test for a 35 bit N
+<span class="c1"># 2.47 s ± 19.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</span>
 </pre></div>
 
     </div>
@@ -20035,13 +20043,13 @@ $$ \lambda = (3x_{p}^{2} + A)(2y_{p})^{-1} $$<p>We will check if $x_{P} - x_{Q}$
 <span class="c1"># These assert checks work most of the time, if it does not work, the lenstra function has returned False, but if we</span>
 <span class="c1"># run the checks again, it is likely the asserts will run because lenstra returns factors with high probability</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">lenstra</span><span class="p">(</span><span class="mi">551</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">lenstra</span><span class="p">(</span><span class="mi">551</span><span class="p">,</span> <span class="mi">300000</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">551</span>          <span class="c1"># checking lenstra works for 10 bit N</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">lenstra</span><span class="p">(</span><span class="mi">542257</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">lenstra</span><span class="p">(</span><span class="mi">542257</span><span class="p">,</span> <span class="mi">300000</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">542257</span>       <span class="c1"># checking lenstra works for 20 bit N</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">lenstra</span><span class="p">(</span><span class="mi">818810243</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">lenstra</span><span class="p">(</span><span class="mi">818810243</span><span class="p">,</span> <span class="mi">300000</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">818810243</span>    <span class="c1"># checking lenstra works for 30 bit N</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">lenstra</span><span class="p">(</span><span class="mi">30662248501</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">lenstra</span><span class="p">(</span><span class="mi">30662248501</span><span class="p">,</span> <span class="mi">300000</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">30662248501</span>  <span class="c1"># checking lenstra works for 35 bit N</span>
 </pre></div>
 
@@ -20064,6 +20072,7 @@ $$ \lambda = (3x_{p}^{2} + A)(2y_{p})^{-1} $$<p>We will check if $x_{P} - x_{Q}$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> lenstra(551, 1000)  # timeit test for a 10 bit N
+<span class="c1"># 16.5 ms ± 516 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 
     </div>
@@ -20095,6 +20104,7 @@ $$ \lambda = (3x_{p}^{2} + A)(2y_{p})^{-1} $$<p>We will check if $x_{P} - x_{Q}$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> lenstra(542257, 1000)  # timeit test for a 20 bit N
+<span class="c1"># 19 ms ± 197 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 
     </div>
@@ -20126,6 +20136,7 @@ $$ \lambda = (3x_{p}^{2} + A)(2y_{p})^{-1} $$<p>We will check if $x_{P} - x_{Q}$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> lenstra(818810243, 1000)  # timeit test for a 30 bit N
+<span class="c1"># 24.5 ms ± 1.53 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)</span>
 </pre></div>
 
     </div>
@@ -20157,6 +20168,7 @@ $$ \lambda = (3x_{p}^{2} + A)(2y_{p})^{-1} $$<p>We will check if $x_{P} - x_{Q}$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> lenstra(30662248501, 1000)  # timeit test for a 35 bit N
+<span class="c1"># 29.1 ms ± 1.93 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)</span>
 </pre></div>
 
     </div>
@@ -20390,6 +20402,7 @@ Bit Size    Lenstra     Decompose   Pollard&#39;s Rho   Pollard&#39;s p-1
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> lenstra(706542481693, 10000)  # timeit test for a 40 bit N
+<span class="c1"># 213 ms ± 30.2 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)</span>
 </pre></div>
 
     </div>
@@ -20421,6 +20434,7 @@ Bit Size    Lenstra     Decompose   Pollard&#39;s Rho   Pollard&#39;s p-1
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> lenstra(33629819514581, 10000)  # timeit test for a 45 bit N
+<span class="c1"># 248 ms ± 38.8 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)</span>
 </pre></div>
 
     </div>
@@ -20452,6 +20466,7 @@ Bit Size    Lenstra     Decompose   Pollard&#39;s Rho   Pollard&#39;s p-1
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> lenstra(915925713947053, 10000)  # timeit test for a 50 bit N
+<span class="c1"># 303 ms ± 45.2 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)</span>
 </pre></div>
 
     </div>
@@ -20484,6 +20499,7 @@ Bit Size    Lenstra     Decompose   Pollard&#39;s Rho   Pollard&#39;s p-1
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># timeit test for a 60 bit N, increased amount of work done by 10 times</span>
 <span class="o">%</span><span class="k">timeit</span> lenstra(619664021840893559, 100000)
+<span class="c1"># 3.08 s ± 1.6 s per loop (mean ± std. dev. of 7 runs, 1 loop each)</span>
 </pre></div>
 
     </div>
@@ -20746,7 +20762,7 @@ Bit Size    Lenstra     Decompose   Pollard&#39;s Rho   Pollard&#39;s p-1
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Alice calculates the secret key to be 39408981866151167979064713562497111528554380328040456619319614801154975828613 , and Bob calculates the secret key to be 39408981866151167979064713562497111528554380328040456619319614801154975828613 . Hence they both have the same secret key
+<pre>Alice calculates the secret key to be 27864027762674922692500808970338088216316636250329204838931326662189897208167 , and Bob calculates the secret key to be 27864027762674922692500808970338088216316636250329204838931326662189897208167 . Hence they both have the same secret key
 </pre>
 </div>
 </div>
@@ -20793,7 +20809,7 @@ Bit Size    Lenstra     Decompose   Pollard&#39;s Rho   Pollard&#39;s p-1
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Encrypted message has been copied
-Thus Alice has encrypted her message using the key, to get the encrypted message -  [~!|(9Z!zB6Z&lt;~1*|({#~}4,y|)6 y-+rxv5&#39;(5/$)8(|&#39;!0)xy5~&amp;&#34;~&#39;1.~r)8*!&#39;5|z.z8uy#t) z)u|9-y}6*vx$v+7%|3&lt;6(&#39;1(}w&#39;41|1tr$2&#39;%-4v(}!(&#39;ywq)z6  9$$#-r)} .Bob now decrypts this message using the secret key to get - Hello Bob, I&#39;m sending this message to you with the hopes that you have calculated the secret key, so that we can now communicate in private
+Thus Alice has encrypted her message using the key, to get the encrypted message -  Z|%#$0T&#39;yB2_&gt;&#34;9&amp;w%}{$w0-x&#34;-7}x&#39;,q }2&amp;&amp;3+&amp;,3.{*x3&#39;&#34;w0|($}-3&amp;{s+60&#34;&#39;8&#34;y0|2sy}y-~x-{x0&#39; |6&amp;{z&#39;~&#39;2&#34;~,A0$(0-&#34;x%3+}0{y!1%#)6y#$ +~|uz&#39;u4&#34;&#34;8*&amp;z*s+{ .Bob now decrypts this message using the secret key to get - Hello Bob, I&#39;m sending this message to you with the hopes that you have calculated the secret key, so that we can now communicate in private
 </pre>
 </div>
 </div>
@@ -20880,11 +20896,11 @@ Thus Alice has encrypted her message using the key, to get the encrypted message
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The keys we generated using our general function were:
-[44780851000967832081296491600230574865521317610997741795333005642218386092027, 44780851000967832081296491600230574865521317610997741795333005642218386092027, 44780851000967832081296491600230574865521317610997741795333005642218386092027]
+[74135906101437138583300937914631977175626701528249967115727286115466484476504, 74135906101437138583300937914631977175626701528249967115727286115466484476504, 74135906101437138583300937914631977175626701528249967115727286115466484476504]
 The independelty calculated keys were:
-Alices S - 44780851000967832081296491600230574865521317610997741795333005642218386092027
-Bobs S - 44780851000967832081296491600230574865521317610997741795333005642218386092027
-Charlies S - 44780851000967832081296491600230574865521317610997741795333005642218386092027
+Alices S - 74135906101437138583300937914631977175626701528249967115727286115466484476504
+Bobs S - 74135906101437138583300937914631977175626701528249967115727286115466484476504
+Charlies S - 74135906101437138583300937914631977175626701528249967115727286115466484476504
 As you can see they&#39;re all equal, whever we use our general function, or do it indepently
 </pre>
 </div>
@@ -21556,6 +21572,11 @@ As you can see they&#39;re all equal, whever we use our general function, or do 
 <span class="o">%</span><span class="k">timeit</span> discrete_logarithm_brute_fast(3452, 123456, 39104)
 <span class="o">%</span><span class="k">timeit</span> discrete_logarithm_brute_better(3452, 123456, 39104)
 <span class="o">%</span><span class="k">timeit</span> discrete_logarithm_brute_better_fast(3452, 123456, 39104)
+
+<span class="c1"># 791 µs ± 30.2 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)</span>
+<span class="c1"># 372 µs ± 29.3 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)</span>
+<span class="c1"># 88.4 µs ± 9.57 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)</span>
+<span class="c1"># 6.58 µs ± 225 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
 </pre></div>
 
     </div>
@@ -22405,6 +22426,9 @@ aa^{-1} &amp;\equiv 1\mod{N}\\
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> discrete_logarithm_step(3452, 123456, 39104)
 <span class="o">%</span><span class="k">timeit</span> discrete_logarithm_step_fast(3452, 123456, 39104)
+
+<span class="c1"># 550 µs ± 15.7 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)</span>
+<span class="c1"># 15.9 µs ± 551 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
 </pre></div>
 
     </div>
@@ -22887,6 +22911,13 @@ aa^{-1} &amp;\equiv 1\mod{N}\\
 <span class="o">%</span><span class="k">timeit</span> discrete_logarithm_brute_better_fast(3452, 123456, 39104)
 <span class="o">%</span><span class="k">timeit</span> discrete_logarithm_step(3452, 123456, 39104)
 <span class="o">%</span><span class="k">timeit</span> discrete_logarithm_step_fast(3452, 123456, 39104)
+
+<span class="c1"># 788 µs ± 17.7 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)</span>
+<span class="c1"># 347 µs ± 16.7 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)</span>
+<span class="c1"># 94.8 µs ± 8.32 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)</span>
+<span class="c1"># 6.81 µs ± 368 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
+<span class="c1"># 535 µs ± 36.6 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)</span>
+<span class="c1"># 15.3 µs ± 189 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
 </pre></div>
 
     </div>
@@ -24008,7 +24039,7 @@ We now have our Huffman Binary Tree.</p>
     
     
     <span class="n">one_d_vals</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">ond_d_formated_bin_tree</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">one_d_formated_bin_tree</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="c1">#Now turn 2D array into 1D array</span>
     <span class="c1">#Only Copy Across if wanted</span>
     
@@ -24016,9 +24047,14 @@ We now have our Huffman Binary Tree.</p>
         <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="n">line_index</span><span class="p">])):</span>
             <span class="k">if</span> <span class="n">formated_bin_tree</span><span class="p">[</span><span class="n">line_index</span><span class="p">][</span><span class="n">index</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;No&#39;</span><span class="p">:</span>
                 <span class="n">one_d_vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="n">line_index</span><span class="p">][</span><span class="n">index</span><span class="p">])</span>
-                <span class="n">ond_d_formated_bin_tree</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">formated_bin_tree</span><span class="p">[</span><span class="n">line_index</span><span class="p">][</span><span class="n">index</span><span class="p">])</span>
+                <span class="n">one_d_formated_bin_tree</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">formated_bin_tree</span><span class="p">[</span><span class="n">line_index</span><span class="p">][</span><span class="n">index</span><span class="p">])</span>
+    
+    <span class="c1">#Make the tree work for \n chars</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">one_d_formated_bin_tree</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">one_d_formated_bin_tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">:</span>
+            <span class="n">one_d_formated_bin_tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n&quot;</span>
 
-    <span class="k">return</span> <span class="n">one_d_vals</span><span class="p">,</span> <span class="n">ond_d_formated_bin_tree</span>
+    <span class="k">return</span> <span class="n">one_d_vals</span><span class="p">,</span> <span class="n">one_d_formated_bin_tree</span>
         
 <span class="k">def</span> <span class="nf">show_binary_tree</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">views</span><span class="p">):</span>
     <span class="n">bin_tree</span> <span class="o">=</span> <span class="n">BstNode</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">views</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -24212,13 +24248,14 @@ We now have our Huffman Binary Tree.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">write_uncompressed_file</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">display_binary_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">display_binary_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">read_binary_tree</span><span class="p">()</span>
         <span class="n">location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">binary_tree_location</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_pic.txt&quot;</span>
         <span class="n">numbers</span><span class="p">,</span> <span class="n">views</span> <span class="o">=</span> <span class="n">get_formated_binary_tree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">binary_tree</span><span class="p">)</span>
         <span class="n">binary_tree_string</span> <span class="o">=</span> <span class="n">get_binary_tree_string</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">views</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">binary_tree_string</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">binary_tree_string</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
 </pre></div>
 
@@ -24240,7 +24277,7 @@ We now have our Huffman Binary Tree.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># My tests</span>
-<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;HuffmanCompression/&#39;</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">huff_path</span>
 
 
 <span class="k">class</span> <span class="nc">TestHuffman</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
@@ -24388,7 +24425,7 @@ We now have our Huffman Binary Tree.</p>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>...............
 ----------------------------------------------------------------------
-Ran 15 tests in 0.014s
+Ran 15 tests in 0.013s
 
 OK
 </pre>
@@ -24804,17 +24841,33 @@ First we list the characters in order of frequency.</p>
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[150]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Lord_Huffman</span><span class="o">.</span><span class="n">display_binary_tree</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span> <span class="c1">#Saving the binary tree pic in file</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sadly we can't see the entire lord binary tree rendered as it takes up to much space (one line will be written on two lines as the notebook is not wide enough), and for larger trees processing time becomes a lot longer. Here are the branches of the binary tree.</p>
+<p>Sadly we can't see the entire lord binary tree rendered as it takes up to much space (one line will be written on two lines as the notebook is not wide enough), and for larger trees processing time becomes a lot longer.</p>
+<p>But we can view the file in a text editor like notepad, here is a link to the file
+<a href="./HuffmanCompression/The_Lord_Of_The_Binary_Trees_pic.txt">Lord Of The Rings Binary Tree Picture</a></p>
+<p>Here are the branches of the binary tree.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[150]:</div>
+<div class="prompt input_prompt">In&nbsp;[151]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">show_binary_tree</span><span class="p">(</span><span class="o">*</span><span class="n">get_formated_binary_tree</span><span class="p">(</span><span class="n">lord_binary_tree</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
@@ -24883,7 +24936,7 @@ First we list the characters in order of frequency.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[151]:</div>
+<div class="prompt input_prompt">In&nbsp;[152]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">show_binary_tree</span><span class="p">(</span><span class="o">*</span><span class="n">get_formated_binary_tree</span><span class="p">(</span><span class="n">lord_binary_tree</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="c1">#As can be seen there are a few overlaps</span>
@@ -24903,44 +24956,43 @@ First we list the characters in order of frequency.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>                                                                                _|_      
-                                                                               /   \     
-                    ___________________________________________________________|   |_    
-                   /                                                            \ /  \   
-                  _|_________________________________________________________   a t  |_  
-                 /                                                           \      /  \ 
-  _______________|    _______________________________________________________|      l  | 
- /                \  /                                                        \       / \
- |_______         y  |_                                                       m       f g
-/        \          /  \                                                                 
-k       _|_         
-  |_______________________________________________                  
-       /   \          /                                                \                 
-      _|   |_         I         _______________________________________|_                
-     /  \ /  \                 /                                         \               
-    _|  F S  |_               _|_                                        |_              
-   /  \     /  \             /   \                                      /  \             
-   |  R     E  |          ___|   |___________________________________   ‘  |             
-  / \         / \        /    \ /                                    \    / \            
-  x q         C Y        |_   D O   _________________________________|    L N            
-                        /  \       /                                  \                  
-                        &#34;  |       |_______________________________   z                  
-                          / \     /                                \                     
-                          ( )     ó   _____________________________|                     
-                                     /                              \                    
-                                     |_________                     ú                    
-                                    /          \                                         
-                                    á         _|_________                                
-                                             /           \                               
-                                          ___|          _|___                            
-                                         /    \        /     \                           
-                                        _|_   6     ___|    _|___                        
-                                       /   \       /    \  /     \                       
-                                       |   |      _|_   *  |    _|                       
-                                      / \ / \    /   \    / \  /  \                      
-                                      ы н к з    |   |    Z м  |  ©                      
-                                                / \ / \       / \                        
-                                                у ь _ г       … =                        
+<pre>                                                                                 _|_      
+                                                                                /   \     
+                    ____________________________________________________________|   |_    
+                   /                                                             \ /  \   
+                  _|__________________________________________________________   a t  |_  
+                 /                                                            \      /  \ 
+  _______________|     _______________________________________________________|      l  | 
+ /                \   /                                                        \       / \
+ |_______         y   |_                                                       m       f g
+/        \           /  \                                                                 
+k       _|_         \n  |_______________________________________________                  
+       /   \           /                                                \                 
+      _|   |_          I         _______________________________________|_                
+     /  \ /  \                  /                                         \               
+    _|  F S  |_                _|_                                        |_              
+   /  \     /  \              /   \                                      /  \             
+   |  R     E  |           ___|   |___________________________________   ‘  |             
+  / \         / \         /    \ /                                    \    / \            
+  x q         C Y         |_   D O   _________________________________|    L N            
+                         /  \       /                                  \                  
+                         &#34;  |       |_______________________________   z                  
+                           / \     /                                \                     
+                           ( )     ó   _____________________________|                     
+                                      /                              \                    
+                                      |_________                     ú                    
+                                     /          \                                         
+                                     á         _|_________                                
+                                              /           \                               
+                                           ___|          _|___                            
+                                          /    \        /     \                           
+                                         _|_   6     ___|    _|___                        
+                                        /   \       /    \  /     \                       
+                                        |   |      _|_   *  |    _|                       
+                                       / \ / \    /   \    / \  /  \                      
+                                       ы н к з    |   |    Z м  |  ©                      
+                                                 / \ / \       / \                        
+                                                 у ь _ г       … =                        
 </pre>
 </div>
 </div>
@@ -24951,7 +25003,7 @@ k       _|_
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[152]:</div>
+<div class="prompt input_prompt">In&nbsp;[153]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">show_binary_tree</span><span class="p">(</span><span class="o">*</span><span class="n">get_formated_binary_tree</span><span class="p">(</span><span class="n">lord_binary_tree</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
@@ -24998,7 +25050,20 @@ k       _|_
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[153]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[154]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Now to uncopress the file</span>
@@ -25145,7 +25210,7 @@ The Lord
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[154]:</div>
+<div class="prompt input_prompt">In&nbsp;[155]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Open the file in the books folder to see, all of the books</span>

@@ -53,7 +53,8 @@
 </ol>
 
 ## Recommended Viewing
-This is a very large project, so to view it on lower end computers it is recommended to view the corresponding html document of the project
+This is a very large project, so to view it on lower end computers it is recommended to view the corresponding html document of the project.
+This project will take at least 40 seconds to load the .ipynb file but this depends on the computer being used to view the file. Additionally, because of the long load times by default Nbextensions don't work as the loading of them will time out.
 
 ## Running The Entire ipynb file
 Make sure read_times = True
@@ -63,7 +64,8 @@ It is worth noting sometimes the tests or a function will fail as the way primes
 
 ## What was the code run on?
 The timeit python functions and other timming code were benchmarked on an Intel(R) Core(TM) i5-6600k CPU @ 3.50GHz
-To keep these times coherent through the project the timeit cells have been frozen and read_times = True by default.
+To keep these times coherent through the project the timeit cells have been frozen/locked and read_times = True by default.
+Each time the %timeit python function is called there is a comment below it with the benchmark times.
 
 ## Github Repository
 To see how our work was developed vist https://github.com/UOBMathTeam/CryptographyProject
