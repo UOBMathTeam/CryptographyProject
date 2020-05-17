@@ -55,6 +55,7 @@
 ## Recommended Viewing
 This is a very large project, so to view it on lower end computers it is recommended to view the corresponding html document of the project.
 This project will take at least 40 seconds to load the .ipynb file but this depends on the computer being used to view the file. Additionally, because of the long load times by default Nbextensions don't work as the loading of them will time out.
+Additionally, when viewing the html document make sure you are sufficiently zoomed out or some of the rendered text will not display properly, for example if the title doesn't have the width space required one line will go over multiple lines making the title display incorrectly.
 
 ## Running The Entire ipynb file
 Make sure read_times = True
